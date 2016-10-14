@@ -12,17 +12,19 @@ var shoppingList = [{
 function printShoppingList(shoppingList) {
 
     //log heading/title of list
-    console.log('Shopping List:')
+    //console.log('Shopping List:')
+    var listArr = [];
 
     for (var y = 0; y < shoppingList.length; y++) {
         //STORE values of object in different variables
         var itemList = shoppingList[y];
-        var itemName = itemList.itemName;
+        var name = itemList.itemName;
         var price = itemList.price;
-        //log the item and price
-        console.log(itemName + ' @ ' + ' R' + price);
-    }
+        //push
+        listArr.push(name + ' @ ' + 'R' + price);
+      }
+    return listArr.join('\r\n');
 }
 
 
-printShoppingList(shoppingList);
+console.log(printShoppingList(shoppingList));
