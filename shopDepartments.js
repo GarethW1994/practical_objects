@@ -17,29 +17,45 @@ var salesData = [
 ];
 
 function mostProfitableDepartment(salesDat) {
-    var profitableDep = [];
-    var depart = [];
+
     var departmentName = '';
+    var highestSale = 0;
+
     //maxSales get the highest sale out all the sales in the profitableDep array
-    var maxSales = Math.max.apply(null, profitableDep);;
+    var totalSalesHardware = 0;
+    var totalSalesOutdoor = 0;
+    var totalSalesCarpentry = 0;
+
     for (var i = 0; i < salesDat.length; i++) {
         var salesList = salesDat[i];
         var departName = salesList.department;
         var sales = salesList.sales;
 
-        //push sales and days into an arrray
-        profitableDep.push(sales);
-        depart.push(departName);
+        //Add sales from different departments
+        if (departName === 'hardware') {
+            totalSalesHardware += sales;
+        } else if (departName === 'carpentry') {
+            totalSalesCarpentry += sales;
+        } else if (departName === 'outdoor') {
+            totalSalesOutdoor += sales;
+        }
 
         //determine the biggest sale made
-        if (profitableDep[i] > maxSales) {
-            maxSales = profitableDep[i];
-            departmentName = ' : ' + depart[i];
+        if (totalSalesCarpentry > totalSalesHardware && totalSalesCarpentry > totalSalesOutdoor) {
+            departmentName = ' : carpentry';
+            highestSale = totalSalesCarpentry;
+        } else if (totalSalesOutdoor > totalSalesCarpentry && totalSalesOutdoor > totalSalesHardware) {
+            departmentName = ' : outdoor';
+            highestSale = totalSalesOutdoor;
+        } else {
+            departmentName: ' : hardware';
+            highestSale = totalSalesHardware;
         }
     }
-    
-    //return profitable day
-    return maxSales + departmentName;
+
+
+    //return profitable department
+    return highestSale + departmentName;
 }
 ///////////////////////////////////////////
 function mostProfitableDay(salesDat) {
@@ -74,7 +90,7 @@ const assert = require('assert');
 var profitDepartment = mostProfitableDepartment(salesData);
 var profitDay = mostProfitableDay(salesData);
 
-assert.deepEqual(profitDepartment, '18007 : outdoor');
+assert.deepEqual(profitDepartment, '42525 : outdoor');
 assert.deepEqual(profitDay, 'Thursday');
 
 //log results
