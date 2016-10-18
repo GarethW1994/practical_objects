@@ -22,7 +22,7 @@ var shoppingList3 = [
 ];
 
 //function
-function calculateTotal(shoppingList) {
+function shoppingList(shoppingList) {
     var totalPrice = 0;
     var pricePerItem = [];
 
@@ -44,11 +44,11 @@ var firstList = shoppingList1;
 var secondList = shoppingList2;
 var thirdList = shoppingList3;
 
-assert.deepEqual(calculateTotal(firstList),  37.5  );
-assert.deepEqual(calculateTotal(secondList), 58    );
-assert.deepEqual(calculateTotal(thirdList),  47.96 );
+assert.deepEqual(shoppingList(firstList),  37.5  );
+assert.deepEqual(shoppingList(secondList), 58    );
+assert.deepEqual(shoppingList(thirdList),  47.96 );
 
 //log function output
-console.log('R',calculateTotal(shoppingList1));
-console.log('R',calculateTotal(shoppingList2));
-console.log('R',calculateTotal(shoppingList3));
+console.log('R',shoppingList(shoppingList1));
+console.log('R',shoppingList(shoppingList2));
+console.log('R',shoppingList(shoppingList3));
