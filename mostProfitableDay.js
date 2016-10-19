@@ -46,6 +46,6 @@ const assert = require('assert');
 
 var profitDay = mostProfitableDay(salesData);
 
-assert.deepEqual(profitDay, 'Thursday');
+assert.equal(profitDay, 'Thursday');
 
 console.log('Profitable Day: ', mostProfitableDay(salesData));

@@ -44,9 +44,9 @@ var firstList = shoppingList1;
 var secondList = shoppingList2;
 var thirdList = shoppingList3;
 
-assert.deepEqual(shoppingList(firstList),  37.5  );
-assert.deepEqual(shoppingList(secondList), 58    );
-assert.deepEqual(shoppingList(thirdList),  47.96 );
+assert.equal(shoppingList(firstList),  37.5  );
+assert.equal(shoppingList(secondList), 58    );
+assert.equal(shoppingList(thirdList),  47.96 );
 
 //log function output
 console.log('R',shoppingList(shoppingList1));

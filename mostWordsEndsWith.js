@@ -55,8 +55,8 @@ var mostWordsEndsWith = function(thisSentence) {
 }
 const assert = require('assert');
 
-var test = mostWordsEndsWith(sentence);
+//var test = mostWordsEndsWith(sentence);
 
-assert.deepEqual(test, 'The most common letter: t - words: that , but , packet , that , racket , packet')
+assert.equal(mostWordsEndsWith(sentence), 'The most common letter: t - words: that , but , packet , that , racket , packet');
 
 console.log(mostWordsEndsWith(sentence));

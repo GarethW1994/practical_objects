@@ -26,5 +26,4 @@ function printShoppingList(shoppingList) {
     return listArr.join('\r\n');
 }
 
-
 console.log(printShoppingList(shoppingList));

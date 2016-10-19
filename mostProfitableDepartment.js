@@ -62,7 +62,7 @@ function mostProfitableDepartment(salesDat) {
 const assert = require('assert');
 var profitDepartment = mostProfitableDepartment(salesData);
 
-assert.deepEqual(profitDepartment, '42525 : outdoor');
+assert.equal(profitDepartment, '42525 : outdoor');
 
 //log results
 console.log('Profitable Department: ', mostProfitableDepartment(salesData));
