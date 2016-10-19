@@ -7,7 +7,7 @@ var itemList = [
 ];
 
 //function
-function findItemsOver20(list, threshold) {
+function findItemsOver20(list) {
     var itemsOver = [];
 
     for (var i = 0; i < list.length; i++) {
